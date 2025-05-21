@@ -1,0 +1,37 @@
+/* Fondo del navbar */
+.navbar-custom {
+    background-color: #1E1E2F !important;
+    box-shadow: 0 4px 12px rgba(255, 97, 166, 0.3);
+}
+
+/* Título principal */
+.navbar-brand {
+    color: #FF61A6 !important;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #CDB4DB;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+/* Enlaces */
+.nav-link {
+    color: #A0E7E5 !important;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 0.4rem 0.8rem;
+    margin: 0 0.3rem;
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #FF61A6 0%, #FFE066 100%);
+    box-shadow: 0 4px 10px rgba(255, 97, 166, 0.2);
+}
+
+.nav-link:hover {
+    background: linear-gradient(145deg, #CDB4DB 0%, #FFCCD5 100%);
+    color: #1E1E2F !important;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.4);
+}

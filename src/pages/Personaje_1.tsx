@@ -12,7 +12,7 @@ const Personaje_1 = () => {
     useEffect(() => {
         if (!mountRef.current) return
 
-        // Eliminar canvas duplicado si ya existe
+        
         while (mountRef.current.firstChild) {
         mountRef.current.removeChild(mountRef.current.firstChild)
         }
@@ -23,7 +23,7 @@ const Personaje_1 = () => {
     scene.fog = new THREE.Fog(0x000000, 10, 30)
 
     const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000)
-    camera.position.set(0, 1.5, 4)
+    camera.position.set(0, 0.4, 4)
 
     const renderer = new THREE.WebGLRenderer({ antialias: true })
     renderer.setSize(window.innerWidth, window.innerHeight)
@@ -64,7 +64,7 @@ const Personaje_1 = () => {
         (gltf) => {
             const model = gltf.scene
             model.scale.set(1.5, 1.5, 1.5)
-            model.position.set(0, -1, 0)
+            model.position.set(0, -1.5, 0)
             scene.add(model)
         },
         undefined,

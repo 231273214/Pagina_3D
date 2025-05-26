@@ -1,7 +1,7 @@
 /* Fondo del navbar */
 .navbar-custom {
-    background-color: #1E1E2F !important;
-    box-shadow: 0 4px 12px rgba(255, 97, 166, 0.3);
+    background-color: #1e0b1a !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Título principal */
@@ -19,13 +19,13 @@
 
 /* Enlaces */
 .nav-link {
-    color: #A0E7E5 !important;
+    color: #ffffff !important;
     font-weight: bold;
     border-radius: 20px;
     padding: 0.4rem 0.8rem;
     margin: 0 0.3rem;
     transition: all 0.3s ease;
-    background: linear-gradient(145deg, #FF61A6 0%, #FFE066 100%);
+    background: linear-gradient(145deg, #b55fc0, #fba9ff);
     box-shadow: 0 4px 10px rgba(255, 97, 166, 0.2);
 }
 

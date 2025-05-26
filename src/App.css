@@ -1,10 +1,32 @@
-.home-background {
-  background-image: url('https://es.wallpapers.com/fondos-de-pantalla/paisajebrillante-de-steven-universe-para-ipad-ey2kzg3lu2xkly95.html');
+.home-hero {
+  background-image: url("/Fondo.png");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+   image-rendering: auto; 
+  -webkit-image-rendering: auto;
+  -moz-image-rendering: auto;
   min-height: 100vh;
-  padding: 3rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* RECUADRO */
+.home-overlay {
+  background: rgba(71, 25, 64, 0.85);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   color: white;
-  text-shadow: 1px 1px 3px #000;
+  font-family: 'Quicksand', sans-serif;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

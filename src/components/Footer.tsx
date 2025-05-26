@@ -1,6 +1,6 @@
 const Footer = () => (
     <footer style={{ 
-        backgroundColor: '#1E1E2F',
+        backgroundColor: '#1e0b1a',
         color: '#A0E7E5',
         padding: '1rem',
         textAlign: 'center',

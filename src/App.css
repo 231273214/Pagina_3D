@@ -1,0 +1,10 @@
+.home-background {
+  background-image: url('https://es.wallpapers.com/fondos-de-pantalla/paisajebrillante-de-steven-universe-para-ipad-ey2kzg3lu2xkly95.html');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
+  color: white;
+  text-shadow: 1px 1px 3px #000;
+}

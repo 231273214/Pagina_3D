@@ -11,7 +11,7 @@ const Header = () => (
                 <Nav className="me-auto">
                     <Nav.Link as={Link} to="/personaje1">Steven Universe</Nav.Link>
                     <Nav.Link as={Link} to="/personaje2">Garnet</Nav.Link>
-                    <Nav.Link as={Link} to="/personaje3">Personaje 3</Nav.Link>
+                    <Nav.Link as={Link} to="/personaje3">Spinel</Nav.Link>
                     <Nav.Link as={Link} to="/juego">Mini Juego</Nav.Link>
                 </Nav>
             </Navbar.Collapse>

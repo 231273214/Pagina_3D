@@ -30,19 +30,18 @@ const Home = () => {
             </p>
             <div className="character-cards">
             <div className="card" onClick={() => window.location.href = '/personaje1'}>
-              <img src="/personage/ImgSteven.webp" alt="Steven" />
+              <img src="/personage/ImgSteven.png" alt="Steven" />
              <p>Steven</p>
              </div>
             <div className="card" onClick={() => window.location.href = '/personaje2'}>
-               <img src="/personage/ImgGarnet.webp" alt="Garnet" />
+               <img src="/personage/ImgGarnet.png" alt="Garnet" />
              <p>Garnet</p>
              </div>
              <div className="card" onClick={() => window.location.href = '/personaje3'}>
-              <img src="/personage/ImgSpinel.webp" alt="Spinel" />
+              <img src="/personage/ImgSpinel.png" alt="Spinel" />
              <p>Spinel</p>
              </div>
              </div>
-
             <h3>Librerías utilizadas:</h3>
             <ul>
               <li><strong>React:</strong> para construir la aplicación</li>

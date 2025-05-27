@@ -46,7 +46,7 @@ const Personaje_3 = () => {
         camera.add(listener)
         const sound = new THREE.Audio(listener)
         const audioLoader = new THREE.AudioLoader()
-        audioLoader.load("/sounds/StrongerThanYou.ogg", (buffer) => {
+        audioLoader.load("/sounds/Drift-Away.ogg", (buffer) => {
             sound.setBuffer(buffer)
             sound.setLoop(true)
             sound.setVolume(0.5)

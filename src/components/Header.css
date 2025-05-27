@@ -1,37 +1,50 @@
 /* Fondo del navbar */
 .navbar-custom {
-    background-color: #1e0b1a !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: #19001e;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
 }
+
 
 /* Título principal */
 .navbar-brand {
-    color: #FF61A6 !important;
-    font-weight: bold;
-    font-size: 1.8rem;
-    text-shadow: 1px 1px 3px #CDB4DB;
-    transition: transform 0.3s ease;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ff61a6, #ffcce1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   text-shadow: 0 0 8px #ffb3d6;
+  animation: pulseGlow 2s infinite ease-in-out;
+  transition: transform 0.3s ease;
 }
-
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 8px #ffb3d6, 0 0 20px #ff61a6;
+  }
+  50% {
+    text-shadow: 0 0 16px #ffcce1, 0 0 24px #ff61a6;
+  }
+}
 .navbar-brand:hover {
     transform: scale(1.05);
 }
 
 /* Enlaces */
-.nav-link {
-    color: #ffffff !important;
-    font-weight: bold;
-    border-radius: 20px;
-    padding: 0.4rem 0.8rem;
-    margin: 0 0.3rem;
-    transition: all 0.3s ease;
-    background: linear-gradient(145deg, #b55fc0, #fba9ff);
-    box-shadow: 0 4px 10px rgba(255, 97, 166, 0.2);
+.navbar-nav .nav-link {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 600;
+  margin: 0 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 25px;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.07);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
 }
 
-.nav-link:hover {
-    background: linear-gradient(145deg, #CDB4DB 0%, #FFCCD5 100%);
-    color: #1E1E2F !important;
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.4);
+.navbar-nav .nav-link:hover {
+  background: linear-gradient(to right, #5fcdff, #a0e7e5);
+  color: #19001e !important;
 }

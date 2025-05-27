@@ -30,3 +30,36 @@
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+.info-button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #5fcdff;
+  color: #19001e;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-family: 'Baloo 2', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.info-button:hover {
+  background-color: #a0e7e5;
+  transform: scale(1.05);
+}
+
+.info-box {
+  margin-top: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  text-align: left;
+  font-family: 'Quicksand', sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.info-box ul {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+  list-style-type: square;
+}

@@ -1,0 +1,31 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Baloo 2', sans-serif;
+}
+
+/* Navbar y links */
+.navbar-brand, .nav-link {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 600;
+}
+
+/* Botones */
+button {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 600;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  background-color: #ff61a6;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #ffa6d3;
+  transform: scale(1.05);
+}

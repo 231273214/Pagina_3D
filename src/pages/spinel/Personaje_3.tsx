@@ -4,7 +4,7 @@ import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
 import '../../components/Personajes.css';
 
-const Personaje_1 = () => {
+const Personaje_3 = () => {
     const mountRef = useRef<HTMLDivElement | null>(null)
     const [soundRef, setSoundRef] = useState<THREE.Audio | null>(null)
     const [isPlaying, setIsPlaying] = useState(false)
@@ -60,7 +60,7 @@ const Personaje_1 = () => {
         setSoundRef(sound)
     })
 
-    // Modelo GLTF
+    // Modelo GLB
     const loader = new GLTFLoader()
     loader.load(
         "/models/Spinel.glb",
@@ -157,9 +157,6 @@ return (
 </div>
 
 )
-
-
 }
-
-export default Personaje_1
+export default Personaje_3
 

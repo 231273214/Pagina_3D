@@ -60,7 +60,7 @@ const Personaje_1 = () => {
         setSoundRef(sound)
     })
 
-    // Modelo GLTF
+    // Modelo GLB
     const loader = new GLTFLoader()
     loader.load(
         "/models/Steven_Universe.glb",

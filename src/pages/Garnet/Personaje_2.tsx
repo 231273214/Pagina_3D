@@ -4,7 +4,7 @@ import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
 import '../../components/Personajes.css';
 
-const Personaje_1 = () => {
+const Personaje_2 = () => {
     const mountRef = useRef<HTMLDivElement | null>(null)
     const [soundRef, setSoundRef] = useState<THREE.Audio | null>(null)
     const [isPlaying, setIsPlaying] = useState(false)
@@ -53,14 +53,14 @@ const Personaje_1 = () => {
     camera.add(listener)
     const sound = new THREE.Audio(listener)
     const audioLoader = new THREE.AudioLoader()
-    audioLoader.load("/sounds/Strong-Than-You.ogg", (buffer) => {
+    audioLoader.load("/sounds/Stronger-Than-You.ogg", (buffer) => {
         sound.setBuffer(buffer)
         sound.setLoop(true)
         sound.setVolume(0.5)
         setSoundRef(sound)
     })
 
-    // Modelo GLTF
+    // Modelo GLB
     const loader = new GLTFLoader()
     loader.load(
         "/models/Garnet.glb",
@@ -157,9 +157,6 @@ return (
 </div>
 
 )
-
-
 }
-
-export default Personaje_1
+export default Personaje_2
 

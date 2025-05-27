@@ -17,7 +17,7 @@ body {
 
 .character-card-horizontal {
   display: flex;
-  flex-direction: row; /* horizontal */
+  flex-direction: row; 
   align-items: center;
   justify-content: center;
   background: rgba(71, 25, 64, 0.85);
@@ -26,7 +26,7 @@ body {
   max-width: 900px;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
   gap: 30px;
-  flex-wrap: wrap; /* Permite responsividad en pantallas pequeñas */
+  flex-wrap: wrap;
 }
 
 .character-viewer-card {

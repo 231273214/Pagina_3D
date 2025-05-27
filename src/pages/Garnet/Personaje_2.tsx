@@ -2,37 +2,40 @@ import { useEffect, useRef, useState } from "react"
 import * as THREE from "three"
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
+import '../../components/Personajes.css';
 
-const Personaje_2 = () => {
+const Personaje_1 = () => {
     const mountRef = useRef<HTMLDivElement | null>(null)
     const [soundRef, setSoundRef] = useState<THREE.Audio | null>(null)
     const [isPlaying, setIsPlaying] = useState(false)
     const requestRef = useRef<number>(0)
 
     useEffect(() => {
-        if (!mountRef.current) return
+    if (!mountRef.current) return
 
-        
-        while (mountRef.current.firstChild) {
+    while (mountRef.current.firstChild) {
         mountRef.current.removeChild(mountRef.current.firstChild)
-        }
+    }
 
-    // Escena, cámara, renderer
+    const width = mountRef.current.clientWidth
+    const height = mountRef.current.clientHeight
+
     const scene = new THREE.Scene()
     scene.background = new THREE.Color(0x000000)
     scene.fog = new THREE.Fog(0x000000, 10, 30)
 
-    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000)
-    camera.position.set(0, 0.04, 6)
+    const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000)
+    camera.position.set(0, 1.2, 4)
 
     const renderer = new THREE.WebGLRenderer({ antialias: true })
-    renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer.setSize(width, height)
+    renderer.setPixelRatio(window.devicePixelRatio)
     mountRef.current.appendChild(renderer.domElement)
 
     // Luces
     scene.add(new THREE.AmbientLight(0xffffff, 0.6))
     const dirLight = new THREE.DirectionalLight(0xffffff, 0.6)
-    dirLight.position.set(3, 5, 2)
+    dirLight.position.set(3, 8, 2)
     scene.add(dirLight)
 
     // Orbit Controls
@@ -50,10 +53,10 @@ const Personaje_2 = () => {
     camera.add(listener)
     const sound = new THREE.Audio(listener)
     const audioLoader = new THREE.AudioLoader()
-    audioLoader.load("/sounds/Stronger-Than-You.ogg", (buffer) => {
+    audioLoader.load("/sounds/Strong-Than-You.ogg", (buffer) => {
         sound.setBuffer(buffer)
         sound.setLoop(true)
-        sound.setVolume(1.5)
+        sound.setVolume(0.5)
         setSoundRef(sound)
     })
 
@@ -64,7 +67,7 @@ const Personaje_2 = () => {
         (gltf) => {
             const model = gltf.scene
             model.scale.set(1.5, 1.5, 1.5)
-            model.position.set(0, -1.8, 0)
+            model.position.set(0, -2.5 , 0.9) 
             scene.add(model)
         },
         undefined,
@@ -78,7 +81,7 @@ const Personaje_2 = () => {
     const particlesGeometry = new THREE.BufferGeometry()
     const positions = new Float32Array(particleCount * 3)
     for (let i = 0; i < particleCount * 3; i++) {
-      positions[i] = (Math.random() - 0.5) * 20
+        positions[i] = (Math.random() - 0.5) * 20
     }
     particlesGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3))
     const particlesMaterial = new THREE.PointsMaterial({
@@ -92,9 +95,8 @@ const Personaje_2 = () => {
 
     // Animación
     const animate = () => {
-        controls.update() 
+        controls.update()
 
-      // Movimiento vertical de partículas
         const pos = particles.geometry.attributes.position as THREE.BufferAttribute
         for (let i = 1; i < pos.count * 3; i += 3) {
             pos.array[i] += 0.002
@@ -109,55 +111,55 @@ const Personaje_2 = () => {
     animate()
 
     // Cleanup
-        return () => {
+    return () => {
         if (requestRef.current) cancelAnimationFrame(requestRef.current)
         renderer.dispose()
         controls.dispose()
         while (mountRef.current?.firstChild) {
             mountRef.current.removeChild(mountRef.current.firstChild)
         }
-        }
-    }, [])
+    }
+}, [])
+
 
     const handlePlay = () => {
         if (soundRef && !soundRef.isPlaying) {
-        soundRef.play()
-        setIsPlaying(true)
+            soundRef.play()
+            setIsPlaying(true)
         }
     }
 
     const handlePause = () => {
         if (soundRef && soundRef.isPlaying) {
-        soundRef.pause()
-        setIsPlaying(false)
+            soundRef.pause()
+            setIsPlaying(false)
         }
     }
 
-    return (
-        <div>
-        <div ref={mountRef} style={{ width: "100vw", height: "100vh" }} />
-        <div
-            style={{
-            position: "fixed",
-            bottom: "20px",
-            left: "20px",
-            display: "flex",
-            gap: "10px",
-            zIndex: 1000,
-            backgroundColor: "rgba(0,0,0,0.5)",
-            padding: "10px",
-            borderRadius: "10px"
-            }}
+
+return (
+<div className="character-container">
+    <div className="character-card-horizontal">
+        <div ref={mountRef} className="character-viewer-card" />
+        <div className="character-info">
+        <h2 className="character-title">Garnet</h2>
+        <p className="character-description">
+            Garnet es la fusión estable de Rubí y Zafiro. Representa el poder del amor, la confianza y la unión. Líder firme y protectora de las Gemas de Cristal.
+        </p>
+        <button
+            onClick={isPlaying ? handlePause : handlePlay}
+            className="music-button"
         >
-            <button onClick={handlePlay} disabled={isPlaying}>
-            ▶️ Play
-            </button>
-            <button onClick={handlePause} disabled={!isPlaying}>
-            ⏸️ Pause
-            </button>
+            {isPlaying ? "PAUSAR MÚSICA" : "REPRODUCIR MÚSICA"}
+        </button>
         </div>
-        </div>
-    )
+    </div>
+</div>
+
+)
+
+
 }
 
-export default Personaje_2
+export default Personaje_1
+

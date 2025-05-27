@@ -3,13 +3,14 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-   image-rendering: auto; 
+  image-rendering: auto; 
   -webkit-image-rendering: auto;
   -moz-image-rendering: auto;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 3rem;
 }
 /* RECUADRO */
 .home-overlay {

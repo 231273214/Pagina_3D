@@ -30,15 +30,15 @@ const Home = () => {
             </p>
             <div className="character-cards">
             <div className="card" onClick={() => window.location.href = '/personaje1'}>
-              <img src="/personage/ImgSteven.png" alt="Steven" />
+              <img src="/personaje/ImgSteven.png" alt="Steven" />
              <p>Steven</p>
              </div>
             <div className="card" onClick={() => window.location.href = '/personaje2'}>
-               <img src="/personage/ImgGarnet.png" alt="Garnet" />
+               <img src="/personaje/ImgGarnet.png" alt="Garnet" />
              <p>Garnet</p>
              </div>
              <div className="card" onClick={() => window.location.href = '/personaje3'}>
-              <img src="/personage/ImgSpinel.png" alt="Spinel" />
+              <img src="/personaje/ImgSpinel.png" alt="Spinel" />
              <p>Spinel</p>
              </div>
              </div>

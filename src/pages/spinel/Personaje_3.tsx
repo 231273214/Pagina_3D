@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react"
+import { Link } from 'react-router-dom'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import * as THREE from "three"
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
@@ -56,7 +58,7 @@ const Personaje_3 = () => {
     audioLoader.load("/sounds/Drift-Away.ogg", (buffer) => {
         sound.setBuffer(buffer)
         sound.setLoop(true)
-        sound.setVolume(0.5)
+        sound.setVolume(3.5)
         setSoundRef(sound)
     })
 
@@ -138,25 +140,35 @@ const Personaje_3 = () => {
 
 
 return (
-<div className="character-container">
-    <div className="character-card-horizontal">
+    <div className="character-container">
+        <div className="character-card-horizontal">
         <div ref={mountRef} className="character-viewer-card" />
         <div className="character-info">
-        <h2 className="character-title">Spinel</h2>
-        <p className="character-description">
+            <h2 className="character-title">Spinel</h2>
+            <p className="character-description">
             Spinel fue la antigua compañera de juego de Pink Diamond. Tras ser olvidada, regresa con un carácter explosivo y complejo. Su historia explora el abandono y la redención.
-        </p>
-        <button
+            </p>
+            <button
             onClick={isPlaying ? handlePause : handlePlay}
             className="music-button"
-        >
+            >
             {isPlaying ? "PAUSAR MÚSICA" : "REPRODUCIR MÚSICA"}
-        </button>
+            </button>
+
+            <div className="navigation-buttons">
+            <Link to="/personaje2" className="back-button">
+                <i className="bi bi-arrow-left-circle-fill" style={{ marginRight: '8px' }}></i>
+                Atrás
+            </Link>
+            <Link to="/juego" className="next-button">
+                Videojuego <i className="bi bi-arrow-right-circle-fill" style={{ marginLeft: '8px' }}></i>
+            </Link>
+            </div>
+        </div>
         </div>
     </div>
-</div>
+);
 
-)
 }
 export default Personaje_3
 

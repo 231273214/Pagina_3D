@@ -14,7 +14,7 @@
   background: linear-gradient(135deg, #ff61a6, #ffcce1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-   text-shadow: 0 0 8px #ffb3d6;
+  text-shadow: 0 0 8px #ffb3d6;
   animation: pulseGlow 2s infinite ease-in-out;
   transition: transform 0.3s ease;
 }

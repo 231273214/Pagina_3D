@@ -7,6 +7,7 @@ body {
   overflow-x: hidden;
 }
 
+/*------ CSS Personajes 3D ------ */
 .character-container {
   min-height: 100vh;
   display: flex;
@@ -53,8 +54,10 @@ body {
   font-size: 1em;
   margin-bottom: 20px;
 }
+
+/*------ CSS Boton musica ------ */
 .music-button {
-  background-color: orange;
+  background: rgba(185, 47, 165, 0.85);
   color: white;
   border: none;
   padding: 12px 20px;
@@ -66,11 +69,44 @@ body {
 }
 
 .music-button:hover {
+  background: rgba(71, 25, 64, 0.85);
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+
+.next-button,
+.back-button {
+  text-decoration: none;
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  flex: 1; 
+  text-align: center;
+}
+
+.next-button:hover,
+.back-button:hover {
   background-color: #ff8c00;
 }
+
+
 
 .footer {
   margin-top: 30px;
   color: #888;
   font-size: 0.9em;
 }
+

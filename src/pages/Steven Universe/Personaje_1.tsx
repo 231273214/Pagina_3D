@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react"
+import { Link } from 'react-router-dom'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import * as THREE from "three"
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
@@ -152,10 +154,17 @@ return (
             >
             {isPlaying ? "PAUSAR MÚSICA" : "REPRODUCIR MÚSICA"}
             </button>
+
+            <div className="navigation-buttons">
+            <Link to="/personaje2" className="next-button">
+                Siguiente <i className="bi bi-arrow-right-circle-fill" style={{ marginLeft: '8px' }}></i>
+            </Link>
+            </div>
         </div>
         </div>
     </div>
-)
+);
+
 
 
 }

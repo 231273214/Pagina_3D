@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react"
+import { Link } from 'react-router-dom'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import * as THREE from "three"
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
@@ -56,7 +58,7 @@ const Personaje_2 = () => {
     audioLoader.load("/sounds/Stronger-Than-You.ogg", (buffer) => {
         sound.setBuffer(buffer)
         sound.setLoop(true)
-        sound.setVolume(0.5)
+        sound.setVolume(3.5)
         setSoundRef(sound)
     })
 
@@ -138,25 +140,35 @@ const Personaje_2 = () => {
 
 
 return (
-<div className="character-container">
-    <div className="character-card-horizontal">
+    <div className="character-container">
+        <div className="character-card-horizontal">
         <div ref={mountRef} className="character-viewer-card" />
         <div className="character-info">
-        <h2 className="character-title">Garnet</h2>
-        <p className="character-description">
+            <h2 className="character-title">Garnet</h2>
+            <p className="character-description">
             Garnet es la fusión estable de Rubí y Zafiro. Representa el poder del amor, la confianza y la unión. Líder firme y protectora de las Gemas de Cristal.
-        </p>
-        <button
+            </p>
+            <button
             onClick={isPlaying ? handlePause : handlePlay}
             className="music-button"
-        >
+            >
             {isPlaying ? "PAUSAR MÚSICA" : "REPRODUCIR MÚSICA"}
-        </button>
+            </button>
+
+            <div className="navigation-buttons">
+            <Link to="/personaje1" className="back-button">
+                <i className="bi bi-arrow-left-circle-fill" style={{ marginRight: '8px' }}></i>
+                Atrás
+            </Link>
+            <Link to="/personaje3" className="next-button">
+                Siguiente <i className="bi bi-arrow-right-circle-fill" style={{ marginLeft: '8px' }}></i>
+            </Link>
+            </div>
+        </div>
         </div>
     </div>
-</div>
+);
 
-)
 }
 export default Personaje_2
 
